@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дорожные знаки</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <style>
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+        }
+        
+        .ui-tooltip {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        img {
+            width: 100px; 
+            height: auto;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <img src="photo/1.jpg" alt="Знак 1" class="tooltip" title="Дорожные работы">
+        <img src="photo/2.jpg" alt="Знак 2" class="tooltip" title="Скользкая дорога">
+        <img src="photo/3.jpg" alt="Знак 3" class="tooltip" title="Крутой подъем">
+        <img src="photo/4.jpg" alt="Знак 4" class="tooltip" title="Дикие животные">
+        <img src="photo/5.png" alt="Знак 5" class="tooltip" title="Дети">
+    </p>
+    <p>
+        <img src="photo/6.png" alt="Знак 6" class="tooltip" title="Главная дорога">
+        <img src="photo/7.jpg" alt="Знак 7" class="tooltip" title="Уступите дорогу">
+        <img src="photo/8.jpg" alt="Знак 8" class="tooltip" title="Движение без остановки запрещено">
+        <img src="photo/9.jpg" alt="Знак 9" class="tooltip" title="Въезд запрещен">
+        <img src="photo/10.png" alt="Знак 10" class="tooltip" title="Движение прямо">
+    </p>
+    <p>
+        <img src="photo/11.jpg" alt="Знак 11" class="tooltip" title="Движение грузовых автомобилей запрещено">
+        <img src="photo/12.png" alt="Знак 12" class="tooltip" title="Движение с прицепом запрещено">
+        <img src="photo/13.jpg" alt="Знак 13" class="tooltip" title="Движение пешеходов запрещено">
+        <img src="photo/14.jpg" alt="Знак 14" class="tooltip" title="Ограничение высоты">
+        <img src="photo/15.jpg" alt="Знак 15" class="tooltip" title="Разворот запрещен">
+    </p>
+
+    <script>
+        $(function() {
+            $('.tooltip').tooltip({
+                position: {
+                    my: "center bottom-20",
+                    at: "center top",
+                    using: function( position, feedback ) {
+                        $( this ).css( position );
+                        $( "<div>" )
+                            .addClass( "arrow" )
+                            .addClass( feedback.vertical )
+                            .addClass( feedback.horizontal )
+                            .appendTo( this );
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
