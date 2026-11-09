@@ -1,11 +1,9 @@
-"""Скачивает фото для сайта FoodExpress в папку img/ рядом с index.html.
-Запуск:  python download_images.py   (достаточно один раз, нужен интернет)
-"""
+
 import os
 import urllib.request
 
 BASE = "https://images.unsplash.com/photo-"
-PHOTOS = [  # (имя файла, id фото на Unsplash, ширина в px)
+PHOTOS = [  
     ("hero",           "1504674900247-0877df9cc836", 2070),
     ("promo",          "1504674900247-0877df9cc836", 300),
     ("mamma-mia",      "1513104890138-7c749659a591", 600),
