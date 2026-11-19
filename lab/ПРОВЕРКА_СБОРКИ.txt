@@ -1,0 +1,22 @@
+HealthHub AI — проверка исходников
+=================================
+
+Выполнено в среде сборки:
+[OK] Node.js syntax check для server/src/index.js.
+[OK] JSX parse/transpile check для client/src/main.jsx (TypeScript JSX parser, 0 diagnostics).
+[OK] Проверка синтаксиса package.json для client и server.
+[OK] Проверка баланса фигурных скобок CSS.
+[OK] Проверка наличия обязательных файлов проекта.
+[OK] Проверка Node scrypt demo password hash: demo1234.
+[OK] Проверка структуры ZIP после упаковки.
+
+Ограничения проверки:
+[NOT RUN] Полный Vite production build: зависимости нельзя было скачать в изолированной среде сборки.
+[NOT RUN] Реальный PostgreSQL integration test: сервер PostgreSQL недоступен в среде сборки.
+[NOT RUN] Сквозной UI/API test в браузере на компьютере пользователя.
+
+Для финальной локальной проверки после установки зависимостей запустите check-build.bat,
+затем start.bat и проверьте http://localhost:4000/api/health.
+
+Сервер автоматически применяет schema.sql и seed.sql при старте. База данных healthhub
+должна быть заранее создана в PostgreSQL.
